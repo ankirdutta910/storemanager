@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Management</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  
+
+  <style>
+    /* Add a black background color to the top navigation */
+  .topnav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .labs{
+       display: inline-block;
+       width: 100px;
+  }
+
+  tr:nth-child(even) {background-color: #3f3f3f;}
+  </style>
+
+
+</head>
+
+<body style="background-color: rgb(41, 41, 41);">
+
+
+  <div class="topnav" style="width: 100%;">
+    <div style="color: aliceblue;margin-left: 10px;text-align: center;">
+      <h5>Tyres Management</h5>
+      
+
+    </div>
+  
+  </div>
+  
+ 
+
+
+  <main id="main"> 
+        <div class="container-fluid" style="margin-top: 10px">
+           <div class="table-responsive custom-table-responsive">
+
+            <div class="container">
+              <button style="margin: 15px;width: 100%;" type="button" class="btn btn-success my-2" data-toggle="modal" data-target="#exampleModalCenter" onclick="FillTboxes(null)">Add New Record</button>
+            </div>
+    
+                <table class="table custom-table" id="myTable" style="color: whitesmoke;margin-top: 20px;">
+                    <thead>
+                        <tr> 
+                        <th scope="col">S No.</th> 
+                        <th scope="col">#No.</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">Variant</th>
+                        <th scope="col">Size (inches)</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Slot</th>
+                        <th scope="col">Availability</th>
+                        <th scope="col">Control Panel</th>
+                    
+
+                        </tr>
+                    </thead>
+                    <tbody id="tbody1">
+                       
+
+                    </tbody>
+                </table>
+            </div>
+
+
+          
+
+ 
+   
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLongTitle">Control Panel</h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+    
+           <label class="labs">#No.:</label>
+           <input type="text" id="NoMod" ><br>
+
+           <label class="labs">Brand:</label>
+           <select name="Tyre" id="TyreMod" style="width: 32%;height: 26px;">
+            <option value="" disabled>Select Brand</option>
+            <option value="CEAT Tyre">CEAT Tyre</option>
+            <option value="MRF Tyre">MRF Tyre</option>
+            <option value="Bridgestone">Bridgestone</option>
+            <option value="JK Tyre">JK Tyre</option>
+            <option value="Apollo Tyre">Apollo Tyre</option>
+      
+          </select><br>
+
+           <label class="labs">Model:</label>
+            <select class="select" name="Tyres" id="ModelMod" style="width: 32%;height: 26px;">
+              <optgroup label="CEAT Tyre">
+                <option value="">Select model</option>
+                <option value="Buland Mile">Buland Mile</option>
+                <option value="CZAR A/T">CZAR A/T</option>
+                <option value="CZAR H/T">CZAR H/T</option>
+                <option value="CZAR HP">CZAR HP</option>
+                <option value="CZAR Sports">CZAR Sports</option>
+                <option value="Fuel Smarrt">Fuel Smarrt</option>
+                <option value="MILAZE (SUV)">MILAZE (SUV)</option>
+                <option value="MILAZE LT (SUV)">MILAZE LT (SUV)</option>
+                <option value="Milage">Milage</option>
+                <option value="Milaze">Milaze</option>
+                <option value="Milaze HD">Milaze HD</option>
+                <option value="Milage X3">Milage X3</option>
+
+              </optgroup>
+              <optgroup label="MRF Tyre">
+                <option value="Bigrover">Bigrover</option>
+                <option value="Estate N4">Estate N4</option>
+                <option value="Estate N6">Estate N6</option>
+                <option value="Legend">Legend</option>
+                <option value="Markus">Markus</option>
+                <option value="Muscle Master">Muscle Master</option>
+                <option value="NDMS">NDMS</option>
+                <option value="SLM">SLM</option>
+                <option value="SM12">SM12</option>
+                <option value="SM99">SM99</option>
+                <option value="Safari">Safari</option>
+
+              </optgroup>
+
+              <optgroup label="Bridgestone">
+                <option value="ALENZA 001">ALENZA 001</option>
+                <option value="B250">B250</option>
+                <option value="B290">B290</option>
+                <option value="B390">B390</option>
+                <option value="B800">B800</option>
+                <option value="DUELER A/T 693 II">DUELER A/T 693 II</option>
+                <option value="DUELER D684">DUELER D684</option>
+                <option value="DUELER D687">DUELER D687</option>
+                <option value="DUELER D689">DUELER D689</option>
+                <option value="DUELER H/L SPORT">DUELER H/L SPORT</option>
+                <option value="EP150">EP150</option>
+
+              </optgroup>
+
+              <optgroup label="JK Tyre">
+                <option value="Brute">Brute</option>
+                <option value="Brute 4X4">Brute 4X4</option>
+                <option value="Elanzo">Elanzo</option>
+                <option value="Elanzo Crusero">Elanzo Crusero</option>
+                <option value="Elanzo NXT">Elanzo NXT</option>
+                <option value="Elanzo Touring">Elanzo Touring</option>
+                <option value="Ranger A/T">Ranger A/T</option>
+                <option value="Ranger H/T">Ranger H/T</option>
+                <option value="Smart Ranger H/T">Smart Ranger H/T</option>
+                <option value="Smart UX Royal">Smart UX Royal</option>
+                <option value="Taximax">Taximax</option>
+                <option value="Taximaxx">Taximaxx</option>
+                <option value="Torando">Torando</option>
+                <option value="ULTIMA LXT">ULTIMA LXT</option>
+                <option value="UX ROYALE">UX ROYALE</option>
+                <option value="UX1">UX1</option>
+                <option value="Ultima NXT">Ultima NXT</option>
+                <option value="Ultima Neo">Ultima Neo</option>
+                <option value="Ultima Sport">Ultima Sport</option>
+              </optgroup>
+
+
+              <optgroup label="Apollo Tyre">
+                <option value="Alnac">Alnac</option>
+                <option value="Alnac 4G">Alnac 4G</option>
+                <option value="Alnac 4Gs">Alnac 4Gs</option>
+                <option value="Altrust">Altrust</option>
+                <option value="Amazer 3G">Amazer 3G</option>
+                <option value="Amazer 3G Maxx">Amazer 3G Maxx</option>
+                <option value="Amazer 4G">Amazer 4G</option>
+                <option value="Amazer 4G Life">Amazer 4G Life</option>
+                <option value="Amazer XL">Amazer XL</option>
+                <option value="Amazer XP">Amazer XP</option>
+                <option value="Apterra AT">Apterra AT</option>
+              </optgroup>
+
+
+            </select>
+
+        
+          </select><br>
+
+
+          <label class="labs">Variant:</label>
+           <select name="variant" id="VariantMod" style="width: 32%;height: 26px;">
+            <option value="" disabled>Select variant</option>
+            <option value="265/65 R17 110S Tubeless">265/65 R17 110S Tubeless</option>
+            <option value="255/65 R18 111H">255/65 R18 111H</option>
+            <option value="235/70 R16 105S Tubeless">235/70 R16 105S Tubeless</option>
+            <option value="235/65 R17 104H Tubeless">235/65 R17 104H Tubeless</option>
+            <option value="185/85 R16 Tubeless">185/85 R16 Tubeless</option>
+            <option value="265/60 R18 110H Tubeless">265/60 R18 110H Tubeless</option>
+            <option value="265/65 R17 12S Tubeless">265/65 R17 12S Tubeless</option>
+            <option value="215/75 R15 100S Tube">215/75 R15 100S Tube</option>
+            <option value="215/75 R15 100S Tubeless">215/75 R15 100S Tubeless</option>
+            <option value="215/65 R16 98H Tubeless">215/65 R16 98H Tubeless</option>
+            <option value="135/70 R12 Tubeless">135/70 R12 Tubeless</option>
+            <option value="6.00/16 Tube">6.00/16 Tube</option>
+            <option value="155/65 R12 71S Tubeless">155/65 R12 71S Tubeless</option>
+            <option value="155 R13 90Q Tubeless">155 R13 90Q Tubeless</option>
+            <option value="78 R15 Tube">78 R15 Tube</option>
+            <option value="195/80 R15 106Q Tube">195/80 R15 106Q Tube</option>
+            <option value="245/45 ZR18 100Y Tubeless">245/45 ZR18 100Y Tubeless</option>
+            <option value="205/65 R15 94H Tubeless">205/65 R15 94H Tubeless</option>
+       
+
+      
+          </select><br>
+
+        
+           <label class="labs">Size:</label>
+           <select name="Size" id="SizeMod" style="width: 32%;height: 26px;">
+            <option value="10 inch">10"</option>
+            <option value="12 inch">12"</option>
+            <option value="13 inch">13"</option>
+            <option value="14 inch">14"</option>
+            <option value="15 inch">15"</option>
+            <option value="16 inch">16"</option>
+            <option value="17 inch">17"</option>
+            <option value="18 inch">18"</option>
+            <option value="19 inch">19"</option>
+            <option value="20 inch">20"</option>
+            <option value="21 inch">21"</option>
+            <option value="22 inch">22"</option>
+            <option value="23 inch">23"</option>
+            <option value="24 inch">24"</option>
+            <option value="25 inch">25"</option>
+            <option value="26 inch">26"</option>
+            <option value="28 inch">28"</option>
+            <option value="30 inch">30"</option>
+            <option value="32 inch">32"</option>
+          </select><br>
+
+           <label class="labs">Price:</label>
+           <input type="text" id="PriceMod"><br>
+
+           <label class="labs">Slot:</label>
+           <input type="text" id="SlotMod"><br>
+
+           <label class="labs">Availability:</label>
+            <input type="text" id="AvailMod" value="1"/>
+        
+            
+          </div>
+          
+         </div>
+         <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+           <button id="AddModBtn" type="button" class="btn btn-primary" onclick="AddStd()">Add New Record</button>
+           <button id="UpdModBtn" type="button" class="btn btn-success"  onclick="UpdStd()">Update Record</button>
+           <button id="DelModBtn" type="button" class="btn btn-danger"  onclick="DelStd()">Delete</button>
+        
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+
+
+        </div>
+   </main>
+
+  
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+
+  <script src="../assets/js/main.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+
+
+  <script id="MainScript">
+      //Connection
+      const firebaseConfig = {
+  apiKey: "AIzaSyD9Q36-oOeKQ0_Y0aWXHXSZO8yB1FiW51E",
+  authDomain: "management-c3842.firebaseapp.com",
+  databaseURL: "https://management-c3842-default-rtdb.firebaseio.com",
+  projectId: "management-c3842",
+  storageBucket: "management-c3842.appspot.com",
+  messagingSenderId: "376327700273",
+  appId: "1:376327700273:web:7b99e2f1ba308f1bf33a10",
+  measurementId: "G-BQSMKJMJY9"
+};
+
+        //Init Firebase
+        firebase.initializeApp(firebaseConfig);
+
+
+
+
+        //GET ALL DATA
+        var stdNo;
+        function SelectAllData(){
+          document.getElementById('tbody1').innerHTML="";
+
+          stdNo=0;
+            firebase.database().ref('tyres').once('value',
+            function(AllRecords){
+                AllRecords.forEach(
+                    function(CurrentRecord){
+                        var no = CurrentRecord.val().no;
+                        var tyre = CurrentRecord.val().tyre;
+                        var model = CurrentRecord.val().model;
+                        var variant = CurrentRecord.val().variant;
+                        var size = CurrentRecord.val().size;
+                        var price = CurrentRecord.val().price;
+                        var slot = CurrentRecord.val().slot;
+                        var stock = CurrentRecord.val().stock;
+                        
+                        
+                        
+                        
+                        AddItemsToTable(no,tyre,model,variant,size,price,slot,stock);
+
+                    }
+                );
+
+            });
+        }
+
+        window.onload = SelectAllData;
+
+        //Filling the table
+        
+        var stdList = [];
+        function AddItemsToTable(no,tyre,model,variant,size,price,slot,stock){
+            var tbody = document.getElementById('tbody1');
+            var trow = document.createElement('tr');
+            var td0 = document.createElement('td');
+            var td1 = document.createElement('td');
+            var td2 = document.createElement('td');
+            var td3 = document.createElement('td');
+            var td4 = document.createElement('td');
+            var td5 = document.createElement('td');
+            var td6 = document.createElement('td');
+            var td7 = document.createElement('td');
+            var td8 = document.createElement('td');
+            
+
+      
+
+
+          stdList.push([no,tyre,model,variant,size,price,slot,stock])
+     
+     
+           
+            td0.innerHTML = ++stdNo;
+            td1.innerHTML = no;
+            td2.innerHTML = tyre;
+            td3.innerHTML = model;
+            td4.innerHTML = variant;
+            td5.innerHTML = size;
+            td6.innerHTML = price;
+            td7.innerHTML = slot;
+            td8.innerHTML = stock;
+            
+    
+     
+            trow.appendChild(td0);
+            trow.appendChild(td1); 
+            trow.appendChild(td2); 
+            trow.appendChild(td3); 
+            trow.appendChild(td4); 
+            trow.appendChild(td5);
+            trow.appendChild(td6);
+            trow.appendChild(td7);
+            trow.appendChild(td8);
+      
+           
+           
+  
+            var ControlDiv = document.createElement("div");
+           
+            ControlDiv.innerHTML = '<button type="button" class="btn my-2 ml-2" style="margin-left:5px;background-color:rgb(2, 142, 207);" data-toggle="modal" data-target="#exampleModalCenter" onclick="FillTboxes('+stdNo+')">Edit Record</button>'
+         
+            trow.appendChild(ControlDiv);
+
+            tbody.appendChild(trow);
+            
+        }
+
+        var ModNo = document.getElementById('NoMod');
+        var ModTyre = document.getElementById('TyreMod');
+        var ModModel = document.getElementById('ModelMod');
+        var ModVariant = document.getElementById('VariantMod');
+        var ModSize = document.getElementById('SizeMod');
+        var ModPrice = document.getElementById('PriceMod');
+        var ModSlot = document.getElementById('SlotMod');
+        var ModAvail = document.getElementById('AvailMod');
+        
+     
+
+        var AddModBtn = document.getElementById('AddModBtn');
+        var UpdModBtn = document.getElementById('UpdModBtn');
+        var DelModBtn = document.getElementById('DelModBtn');
+
+
+        function FillTboxes(index){
+
+          if(index==null){
+              ModNo.value = "";
+               ModTyre.value = "";
+               ModModel.value = "";
+               ModVariant.value = "";
+               ModSize.value = "";
+               ModPrice.value = "";
+               ModSlot.value = "";
+               ModAvail.value = "";
+               ModNo.disabled=false;
+               ModTyre.disabled=false;
+               ModSize.disabled=false;
+               AddModBtn.style.display='inline-block';
+               UpdModBtn.style.display='none';
+               DelModBtn.style.display='none';
+
+          }
+          else{
+               --index;
+               ModNo.value = stdList[index][0];
+               ModTyre.value = stdList[index][1];
+               ModModel.value = stdList[index][2];
+               ModVariant.value = stdList[index][3];
+               ModSize.value = stdList[index][4];
+               ModPrice.value = stdList[index][5];
+               ModSlot.value = stdList[index][6];
+               ModAvail.value = stdList[index][7];
+              ModNo.disabled=true;
+               ModTyre.disabled=true;
+               ModSize.disabled=true;
+               AddModBtn.style.display='none';
+               UpdModBtn.style.display='inline-block';
+               DelModBtn.style.display='inline-block';
+
+          }
+        }
+
+        function AddStd(){
+             
+             firebase.database().ref("tyres/" +ModNo.value).set(
+                  {
+                    no: ModNo.value,
+                    tyre: ModTyre.value,
+                    model: ModModel.value,
+                    variant: ModVariant.value,
+                    size: ModSize.value,
+                    price: ModPrice.value,
+                    slot: ModSlot.value,
+                    stock: ModAvail.value
+                    
+
+                  },
+                  (error)=>{
+                       if(error){
+                            alert("Record was not added, there was some problem");
+                       }
+                       else{
+                            alert("Record was added");
+                            SelectAllData();
+                            
+                        
+
+                            
+                            
+                       }
+                  }
+             )
+        }
+
+
+
+        function UpdStd(){
+             
+             firebase.database().ref("tyres/" +ModNo.value).update(
+                  {
+                    no: ModNo.value,
+                    size: ModSize.value,
+                    price: ModPrice.value,
+                    slot: ModSlot.value,
+                    stock: ModAvail.value
+
+                  },
+                  (error)=>{
+                       if(error){
+                            alert("Record was not updated, there was some problem");
+                       }
+                       else{
+                            alert("Record was updated");
+                            SelectAllData();
+                            
+                            
+                            
+                       }
+                  }
+             )
+        }
+
+
+
+
+        function DelStd(){
+             
+             firebase.database().ref("tyres/" +ModNo.value).remove().then(
+             function(){
+              alert("Record was deleted");
+              SelectAllData();
+              
+             }
+             )
+        }
+
+
+  </script>
+
+</body>
+
+</html>
